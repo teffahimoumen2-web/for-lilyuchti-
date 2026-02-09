@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>For Lilya ❤️</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  text-align: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* صفحة الدخول */
+#login {
+  margin-top: 120px;
+  animation: fadeIn 1.5s ease;
+}
+
+input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 220px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #ff5e78;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ff2f55;
+}
+
+#error {
+  color: red;
+  margin-top: 10px;
+}
+
+/* المحتوى */
+#content {
+  display: none;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeIn 2s ease;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+img {
+  width: 90%;
+  max-width: 350px;
+  margin: 15px;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  animation: zoomIn 1.5s ease;
+}
+
+audio {
+  margin-top: 20px;
+}
+
+/* تأثيرات */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* قلوب متحركة */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp 6s linear infinite;
+  color: #ff5e78;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- صفحة كلمة المرور -->
+<div id="login">
+  <h2>🔒 أدخل كلمة المرور</h2>
+  <input type="password" id="password" placeholder="كلمة المرور">
+  <br>
+  <button onclick="checkPassword()">دخول</button>
+  <p id="error"></p>
+</div>
+
+<!-- المحتوى -->
+<div id="content">
+
+<h1>I LOVE YOU SOO MUCH LILYA ♥️♥️</h1>
+
+<p>
+يا جميلة الروح 🌸<br>
+وجودكِ في حياتي ليس صدفة، بل نعمة أحمد الله عليها في كل حين.<br>
+حين تحضرين، يهدأ قلبي 🤍 ويصمت كل ما كان يرهقني،<br>
+وكأن العالم يتفق معي على أنكِ السلام الذي أحتاجه.<br><br>
+
+أحبكِ لأنكِ النور حين تبهت الأشياء ✨،<br>
+ولأنكِ الطمأنينة التي تسكنني دون ضجيج.<br>
+معكِ يصبح الوقت ألطف ⏳،<br>
+وتغدو الأيام أكثر صدقًا،<br>
+وتتحول اللحظات البسيطة إلى ذكريات لا تُنسى 💫.<br><br>
+
+أنتِ لستِ مجرد حبيبة 💕،<br>
+أنتِ الدعاء الذي يرافقني،<br>
+والابتسامة التي تُنقذ يومي 😊،<br>
+والفكرة الجميلة التي لا تغادر قلبي.<br><br>
+
+أعدكِ أن يكون قلبي لكِ وطنًا آمنًا 🕊️،<br>
+وأن أبقى قريبًا، صادقًا،<br>
+أحبكِ بهدوء يليق بكِ،<br>
+وبعمق لا يعرف الغياب 💖.
+</p>
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+
+<h3>🎵 مقطع صوتي</h3>
+<audio id="song" controls>
+  <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+function checkPassword() {
+  const correctPassword = "17/avril/2024";
+  const input = document.getElementById("password").value;
+
+  if (input === correctPassword) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    document.getElementById("song").play();
+    startHearts();
+  } else {
+    document.getElementById("error").innerText = "❌ كلمة المرور غير صحيحة";
+  }
+}
+
+function startHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }, 500);
+}
+</script>
+
+</body>
+</html>
